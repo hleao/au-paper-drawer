@@ -1,2 +1,4 @@
 # au-paper-drawer
-A polymer paper-drawer plugin for Aurelia
+WIP: A polymer paper-drawer plugin for Aurelia
+
+This plugin is, for now, not functional
