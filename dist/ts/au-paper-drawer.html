@@ -1,0 +1,31 @@
+<template>
+  <require from="./au-paper-drawer.css" as="scoped"></require>
+  
+  <paper-drawer-panel ref="paperDrawer">
+    <paper-header-panel drawer>
+      <paper-toolbar>
+        <div>Menu</div>
+      </paper-toolbar>
+      <paper-listbox selected.bind="selectedItemIndex">
+        <paper-item class="au-paper-drawer-item" style="cursor:pointer" repeat.for="route of paperDrawerItems" onclick.call="navigatoTo(route.routeName)">
+          <paper-ripple></paper-ripple>
+          <iron-icon icon.bind="route.icon" class="menu-icon"></iron-icon>
+          ${route.title}
+        </paper-item>
+
+        <slot></slot>
+
+      </paper-listbox>
+    </paper-header-panel>
+    
+    <paper-header-panel main>
+      <paper-toolbar>
+        <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+        <div>Application</div>
+      </paper-toolbar>
+  
+      <router-view></router-view>
+      
+    </paper-header-panel>
+  </paper-drawer-panel>
+</template>
